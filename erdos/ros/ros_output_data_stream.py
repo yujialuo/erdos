@@ -27,6 +27,9 @@ class ROSOutputDataStream(DataStream):
                           'send {}'.format(self.name))
         msg.stream_name = self.name
         msg = pickle.dumps(msg)
+        while self.publisher is None:
+            # send could be called before setup is complete
+            time.sleep(0.01)
         self.publisher.publish(msg)
 
     def setup(self):

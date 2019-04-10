@@ -61,4 +61,6 @@ class FluxConsumerOperator(Op):
         self._lock.release()
 
     def execute(self):
-        self.spin()
+        # self.spin()
+        import time
+        time.sleep(10)

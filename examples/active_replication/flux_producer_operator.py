@@ -102,4 +102,6 @@ class FluxProducerOperator(Op):
             self.get_output_stream(self._output_stream_name).send(msg)
 
     def execute(self):
-        self.spin()
+        # self.spin()
+        import time
+        time.sleep(10)

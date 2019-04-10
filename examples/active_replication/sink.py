@@ -15,7 +15,7 @@ class Sink(Op):
         return []
 
     def on_msg(self, msg):
-        print('%s received %s' % (self.name, msg))
+        # print('%s received %s' % (self.name, msg))
         num = int(msg.data.split("-")[1])
         if self.last_received_num is not None:
             assert num == self.last_received_num + 1, \
@@ -24,4 +24,6 @@ class Sink(Op):
         self.last_received_num = num
 
     def execute(self):
-        self.spin()
+        # self.spin()
+        import time
+        time.sleep(10)

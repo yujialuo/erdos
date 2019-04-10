@@ -45,4 +45,6 @@ class FailureOperator(Op):
             self._logger.fatal('Unexpected control message {}'.format(msg))
 
     def execute(self):
-        self.spin()
+        # self.spin()
+        import time
+        time.sleep(10)

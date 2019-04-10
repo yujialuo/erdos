@@ -48,4 +48,5 @@ class ControllerOperator(Op):
                 fail_msg = Message((flux_utils.FluxControllerCommand.RECOVER, fail_replica_num), Timestamp(coordinates=[0]))
                 self.get_output_stream('controller_stream').send(fail_msg)
 
-        self.spin()
+        # self.spin()
+        time.sleep(10)
